@@ -1,0 +1,15 @@
+{
+  "name": "com.scarecrow.custom_lighting_urp",
+  "version": "1.0.0",
+  "displayName": "SC_Library_CustomLightingURP",
+  "description": "",
+  "keywords": [
+    "shader"
+  ],
+  "dependencies": {},
+  "author": {
+    "name": "scarecrow",
+    "url": "https://github.com/scarecrow-snow"
+  },
+  "documentationUrl": "https://github.com/scarecrow-snow/CustomLightingURP/blob/main/README.md"
+}
