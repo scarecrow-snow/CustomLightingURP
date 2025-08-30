@@ -73,14 +73,14 @@ void AdditionalLights_float(float Smoothness, float3 WorldPosition, float3 World
 			#endif
 			
 			#if (defined(PROBE_VOLUMES_L1) || defined(PROBE_VOLUMES_L2))
-				// Adaptive Probe Volume support (Unity 6 with proper initialization)
-				float3 apvIndirectLighting = float3(0, 0, 0);
+				// Adaptive Probe Volume support (Unity 6 official implementation)
+				float3 apvIndirectLighting;
 				EvaluateAdaptiveProbeVolume(
-					GetAbsolutePositionWS(WorldPosition), 
-					WorldNormal, 
-					WorldView, 
-					float4(inputData.normalizedScreenSpaceUV, 0, 1), 
-					apvIndirectLighting
+					WorldPosition,                    // World space position
+					WorldNormal,                      // World space normal  
+					WorldView,                        // View direction
+					inputData.normalizedScreenSpaceUV, // Screen space position (float2)
+					apvIndirectLighting              // Output lighting
 				);
 				Color += apvIndirectLighting;
 			#endif
@@ -142,14 +142,14 @@ void AdditionalLightsColorize_float(float Smoothness, float3 WorldPosition, floa
 			#endif
 			
 			#if (defined(PROBE_VOLUMES_L1) || defined(PROBE_VOLUMES_L2))
-				// Adaptive Probe Volume support (Unity 6 with proper initialization)
-				float3 apvIndirectLighting = float3(0, 0, 0);
+				// Adaptive Probe Volume support (Unity 6 official implementation)
+				float3 apvIndirectLighting;
 				EvaluateAdaptiveProbeVolume(
-					GetAbsolutePositionWS(WorldPosition), 
-					WorldNormal, 
-					WorldView, 
-					float4(inputData.normalizedScreenSpaceUV, 0, 1), 
-					apvIndirectLighting
+					WorldPosition,                    // World space position
+					WorldNormal,                      // World space normal  
+					WorldView,                        // View direction
+					inputData.normalizedScreenSpaceUV, // Screen space position (float2)
+					apvIndirectLighting              // Output lighting
 				);
 				Color += apvIndirectLighting;
 			#endif
@@ -200,14 +200,14 @@ void AdditionalLightsBasic_float(float3 WorldPosition, float3 WorldNormal, float
 			Diffuse += thisDiffuse;
 			
 			#if (defined(PROBE_VOLUMES_L1) || defined(PROBE_VOLUMES_L2))
-				// Adaptive Probe Volume support (Unity 6 with proper initialization)
-				float3 apvIndirectLighting = float3(0, 0, 0);
+				// Adaptive Probe Volume support (Unity 6 official implementation)
+				float3 apvIndirectLighting;
 				EvaluateAdaptiveProbeVolume(
-					GetAbsolutePositionWS(WorldPosition), 
-					WorldNormal, 
-					WorldView, 
-					float4(inputData.normalizedScreenSpaceUV, 0, 1), 
-					apvIndirectLighting
+					WorldPosition,                    // World space position
+					WorldNormal,                      // World space normal  
+					WorldView,                        // View direction
+					inputData.normalizedScreenSpaceUV, // Screen space position (float2)
+					apvIndirectLighting              // Output lighting
 				);
 				Color += apvIndirectLighting;
 			#endif
@@ -261,8 +261,7 @@ void AdditionalLightsBasic_half(half3 WorldPosition, half3 WorldNormal, half3 Wo
 					WorldPosition,                    // World space position
 					WorldNormal,                      // World space normal  
 					WorldView,                        // View direction
-					inputData.normalizedScreenSpaceUV, // Screen space position
-					unity_RenderingLayer,             // Rendering layer mask
+					inputData.normalizedScreenSpaceUV, // Screen space position (float2)
 					apvIndirectLighting              // Output lighting
 				);
 				Color += apvIndirectLighting;
@@ -323,14 +322,14 @@ void AdditionalLightsHalfLambert_float(float Smoothness, float3 WorldPosition, f
 			#endif
 			
 			#if (defined(PROBE_VOLUMES_L1) || defined(PROBE_VOLUMES_L2))
-				// Adaptive Probe Volume support (Unity 6 with proper initialization)
-				float3 apvIndirectLighting = float3(0, 0, 0);
+				// Adaptive Probe Volume support (Unity 6 official implementation)
+				float3 apvIndirectLighting;
 				EvaluateAdaptiveProbeVolume(
-					GetAbsolutePositionWS(WorldPosition), 
-					WorldNormal, 
-					WorldView, 
-					float4(inputData.normalizedScreenSpaceUV, 0, 1), 
-					apvIndirectLighting
+					WorldPosition,                    // World space position
+					WorldNormal,                      // World space normal  
+					WorldView,                        // View direction
+					inputData.normalizedScreenSpaceUV, // Screen space position (float2)
+					apvIndirectLighting              // Output lighting
 				);
 				Color += apvIndirectLighting;
 			#endif
